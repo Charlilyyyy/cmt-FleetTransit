@@ -1,0 +1,292 @@
+================================================================================
+ROUTEFLOW — 13-PHASE REBUILD PLAN
+From Idea to Documentation
+================================================================================
+
+RouteFlow: Multi-tenant B2B SaaS for fleet & route management — real-time GPS
+tracking, route optimization, passenger check-in/out, and automated notifications
+(schools, corporate shuttles, tour operators, transport services).
+
+================================================================================
+PHASE 1 — IDEA & PROBLEM DISCOVERY
+================================================================================
+Goal: Validate that RouteFlow solves a real, painful problem worth rebuilding.
+
+Deliverables:
+  - Problem statement (who hurts, what hurts, why now)
+  - Target personas: SuperAdmin, Admin, Staff, Driver, Parent/Guardian
+  - Pain points: manual routing, no live tracking, poor parent communication,
+    attendance gaps, multi-vehicle coordination
+  - Success criteria: what "done" looks like for v1 (e.g. school bus use case)
+  - Assumptions list + risks to test early
+
+Exit criteria:
+  - Written one-pager: problem → solution → primary user → core value prop
+  - Go / no-go decision to proceed to research
+
+================================================================================
+PHASE 2 — MARKET RESEARCH & COMPETITOR ANALYSIS
+================================================================================
+Goal: Understand the landscape and define RouteFlow's differentiation.
+
+Deliverables:
+  - Competitor matrix (features, pricing, tech, weaknesses)
+  - Differentiators: Clarke-Wright VRP, multi-channel notifications (Telegram,
+    LINE, FCM), multi-tenant RLS, free-tier deployable stack
+  - Regulatory / compliance notes (data privacy, child safety, photo proof)
+  - Pricing model sketch (B2B SaaS per org / per vehicle / per seat)
+
+Exit criteria:
+  - Positioning statement: "RouteFlow is the ___ for ___"
+  - Feature priority list informed by market gaps
+
+================================================================================
+PHASE 3 — PRODUCT REQUIREMENTS & MVP SCOPE
+================================================================================
+Goal: Lock scope so the rebuild does not grow unbounded.
+
+Deliverables:
+  - PRD with user stories per role
+  - MVP feature set:
+      • Org & user management (multi-tenant)
+      • Schools, vehicles, drivers, passengers
+      • Route planning + optimization
+      • Trip execution & live tracking
+      • Check-in/out with OTP + photo proof
+      • Parent tracking view
+      • Basic reports & audit log
+  - Out-of-scope for v1 (native apps, AI demand prediction, white-label, i18n)
+  - Non-functional requirements: performance, uptime, security, offline tolerance
+
+Exit criteria:
+  - Signed-off MVP backlog (epics + acceptance criteria)
+  - Wireframe sketches or low-fi mockups for key flows
+
+================================================================================
+PHASE 4 — SYSTEM ARCHITECTURE & TECH STACK
+================================================================================
+Goal: Choose architecture that supports multi-tenant SaaS at low cost.
+
+Deliverables:
+  - Architecture diagram (clients → API → DB → external services)
+  - Tech stack decisions:
+      • Frontend: Next.js 14 (App Router) + TypeScript + Tailwind + shadcn/ui
+      • Database: Supabase (PostgreSQL + Realtime + Storage)
+      • Auth: Firebase Phone Auth + custom claims / LINE login
+      • Maps: Google Maps (Distance Matrix + Directions)
+      • Hosting: Vercel (free tier)
+      • Monorepo: pnpm workspaces
+  - Package boundaries:
+      apps/web, apps/driver, packages/{auth,storage,routing,notifications,shared}
+  - Integration map: Firebase, Supabase, Google Maps, Telegram, LINE, FCM
+  - ADRs (Architecture Decision Records) for major choices
+
+Exit criteria:
+  - Architecture doc approved
+  - Repo structure defined before writing feature code
+
+================================================================================
+PHASE 5 — DATABASE DESIGN & MULTI-TENANT MODEL
+================================================================================
+Goal: Design a secure, scalable data layer with tenant isolation.
+
+Deliverables:
+  - ERD: organizations, users, roles, schools, vehicles, drivers, passengers,
+    routes, stops, trips, check-ins, locations, notifications, audit_logs
+  - Row-Level Security (RLS) policies per table / per role
+  - Indexes for hot queries (trips by date, locations by trip, passengers by org)
+  - Migration strategy (supabase/migrations/, incremental SQL files)
+  - Seed data for local development
+
+Exit criteria:
+  - `supabase db push` applies cleanly
+  - RLS tested: tenant A cannot read tenant B data
+  - Schema documented in docs/DATABASE.md
+
+================================================================================
+PHASE 6 — MONOREPO FOUNDATION & DEV ENVIRONMENT
+================================================================================
+Goal: Bootstrap the project so every later phase plugs in cleanly.
+
+Deliverables:
+  - Initialize monorepo (pnpm-workspace.yaml, root package.json)
+  - TypeScript configs, ESLint, Prettier, shared tsconfig bases
+  - apps/web: Next.js scaffold, Tailwind, globals, layout shell
+  - packages/shared: types, Zod schemas, constants, error utilities
+  - packages/storage: Supabase client + adapter pattern
+  - .env.example with all required keys documented
+  - scripts/check-secrets.sh for pre-commit safety
+  - docs/SETUP.md — local dev quick start
+
+Exit criteria:
+  - `pnpm install` && `pnpm dev` runs web app on localhost:3000
+  - Type-check and lint pass on empty scaffold
+
+================================================================================
+PHASE 7 — AUTHENTICATION, RBAC & SESSION MANAGEMENT
+================================================================================
+Goal: Secure login and role-based access across all apps.
+
+Deliverables:
+  - packages/auth: Firebase admin/client, LINE auth, RBAC helpers
+  - Roles: SuperAdmin, Admin, Staff, Driver, Parent/Guardian
+  - API routes: /api/auth/{email,line,session,verify}
+  - Middleware: protect /dashboard, /parent, /api routes
+  - Session handling (cookies, Supabase server client)
+  - useAuth hook for client components
+  - Login & register pages
+
+Exit criteria:
+  - Each role lands on correct home route after login
+  - Unauthorized users receive 401/403, not data leaks
+  - Auth flow documented in docs/AUTH.md
+
+================================================================================
+PHASE 8 — CORE DOMAIN APIs & BUSINESS LOGIC
+================================================================================
+Goal: Build the operational backbone — CRUD and workflows for fleet ops.
+
+Deliverables:
+  - Dashboard modules (API + pages):
+      • Schools, Vehicles, Drivers, Passengers, Users
+      • Routes (manual create/edit, stops, capacity constraints)
+      • Trips (schedule, assign driver/vehicle, status lifecycle)
+      • Settings, Audit log
+  - Input validation via Zod (packages/shared)
+  - Consistent error handling (no sensitive data in client errors)
+  - Rate limiting on public APIs (10 req/min per IP)
+
+Exit criteria:
+  - Admin can create org → school → vehicle → driver → passenger → route → trip
+  - All mutations write to audit_log
+  - API contracts documented (OpenAPI or markdown in docs/API.md)
+
+================================================================================
+PHASE 9 — ROUTE OPTIMIZATION & MAPS INTEGRATION
+================================================================================
+Goal: Deliver RouteFlow's core differentiator — smart routing.
+
+Deliverables:
+  - packages/routing:
+      • Distance calculator (Google Maps Distance Matrix)
+      • LRU distance cache
+      • VRP solver (Clarke-Wright Savings + 2-opt improvement)
+      • Route optimizer service
+  - API: POST /api/routes/optimize
+  - UI: map picker, location picker, route editor on dashboard
+  - GoogleMapsLoader component, geocoding for stops
+  - Performance target: < 2s optimization for 50 stops
+
+Exit criteria:
+  - Optimized route respects vehicle seat capacity
+  - Distance/duration estimates match Google Maps within tolerance
+  - docs/ROUTING.md explains algorithm and API usage
+
+================================================================================
+PHASE 10 — OPERATIONS DASHBOARD (WEB ADMIN UI)
+================================================================================
+Goal: Give admins and staff a complete control center.
+
+Deliverables:
+  - DashboardLayout, navigation, responsive design
+  - Pages: overview, routes, trips, vehicles, drivers, passengers, schools,
+    users, reports, settings, audit
+  - shadcn/ui components: table, dialog, select, input, skeleton
+  - Reports: trip completion, on-time performance, attendance, route efficiency
+  - Real-time trip monitoring via Supabase Realtime subscriptions
+  - Loading states, empty states, error boundaries
+
+Exit criteria:
+  - Staff can monitor live trips without edit permissions
+  - Admin can complete full daily ops workflow from UI only
+  - Lighthouse: 95+ performance, accessibility, best practices
+
+================================================================================
+PHASE 11 — DRIVER APP, REAL-TIME TRACKING & PARENT PORTAL
+================================================================================
+Goal: Field operations and family-facing visibility.
+
+Deliverables:
+  - apps/driver (Capacitor wrapper) OR driver PWA routes in web
+  - Hooks: useGeolocation, useCamera, useOfflineQueue
+  - Driver flow: start trip → GPS broadcast → check-in/out (OTP + photo + GPS tag)
+  - IndexedDB offline queue + background sync (service worker)
+  - Parent pages: /parent/tracking, /parent/history
+  - Live map: vehicle position, ETA, route progress, geofencing alerts
+  - PWA: manifest.json, sw.js, offline.html
+
+Exit criteria:
+  - Driver location updates reach dashboard in < 100ms (Realtime)
+  - Check-in photo stored in Supabase Storage with timestamp + coordinates
+  - Parent sees pickup/dropoff events without accessing admin data
+
+================================================================================
+PHASE 12 — NOTIFICATIONS, TESTING & SECURITY HARDENING
+================================================================================
+Goal: Reliable alerts and production-grade quality gates.
+
+Deliverables:
+  - packages/notifications: Telegram, LINE, FCM + notification-service
+  - Templates: pickup, dropoff, delay, emergency (per org config)
+  - Unit tests (packages), E2E tests (critical flows)
+  - Security pass:
+      • RLS audit, CSP headers, CSRF (SameSite cookies)
+      • SQL injection / XSS review, crypto.randomUUID() for IDs
+      • scripts/check-secrets before every commit
+  - docs/SECURITY_CHECKLIST.md, DEEP_SECURITY_AUDIT.md
+
+Exit criteria:
+  - Guardian receives notification within 30s of check-in event
+  - `pnpm test`, `pnpm test:e2e`, `pnpm type-check`, `pnpm lint` all green
+  - Security checklist 100% complete
+
+================================================================================
+PHASE 13 — DEPLOYMENT, MONITORING & DOCUMENTATION
+================================================================================
+Goal: Ship to production and leave a complete knowledge base for maintainers.
+
+Deliverables:
+  - Deploy: Vercel (web) + Supabase (prod DB) + Firebase (prod auth)
+  - scripts/deploy.sh, environment separation (dev / staging / prod)
+  - docs/DEPLOYMENT_FREE_TIER.md — $0/month stack guide
+  - docs/SETUP_INSTRUCTIONS.md — full onboarding for new developers
+  - README.md — overview, features, architecture, quick start, roadmap
+  - CONTRIBUTING.md, LICENSE, PRE_COMMIT_VERIFICATION.md
+  - Runbook: incident response, backup/restore, migration rollback
+  - Post-launch: monitor errors (Vercel logs), DB size, API quota usage
+
+Exit criteria:
+  - Production URL live with at least one pilot organization onboarded
+  - New developer can clone → setup → run in < 30 minutes using docs alone
+  - README + docs/ cover every phase output; project is portfolio-ready
+
+================================================================================
+PHASE DEPENDENCY OVERVIEW
+================================================================================
+
+  1 Idea ──► 2 Research ──► 3 PRD ──► 4 Architecture ──► 5 Database
+                                                              │
+  13 Documentation ◄── 12 Test/Security ◄── 11 Driver/Tracking ◄──┘
+         ▲                                        ▲
+         │                                        │
+         └──────── 10 Dashboard ◄── 9 Routing ◄── 8 Core APIs
+                              ▲
+                              │
+                    6 Monorepo ──► 7 Auth
+
+================================================================================
+SUGGESTED TIMELINE (SOLO / SMALL TEAM)
+================================================================================
+
+  Phase 1–3   (Planning)      : 1–2 weeks
+  Phase 4–5   (Architecture)  : 1 week
+  Phase 6–7   (Foundation)    : 1–2 weeks
+  Phase 8–9   (Core + Routing): 2–3 weeks
+  Phase 10–11 (UI + Field)    : 3–4 weeks
+  Phase 12–13 (Quality + Ship): 1–2 weeks
+  ─────────────────────────────────────────
+  Total estimate              : 10–14 weeks
+
+================================================================================
+END OF PHASE PLAN
+================================================================================
