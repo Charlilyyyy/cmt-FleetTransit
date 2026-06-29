@@ -1,16 +1,16 @@
 ================================================================================
-ROUTEFLOW — 13-PHASE REBUILD PLAN
+CMT FLEET TRANSIT — 13-PHASE REBUILD PLAN
 From Idea to Documentation
 ================================================================================
 
-RouteFlow: Multi-tenant B2B SaaS for fleet & route management — real-time GPS
+CMT Fleet Transit: Multi-tenant B2B SaaS for fleet & route management — real-time GPS
 tracking, route optimization, passenger check-in/out, and automated notifications
 (schools, corporate shuttles, tour operators, transport services).
 
 ================================================================================
 PHASE 1 — IDEA & PROBLEM DISCOVERY
 ================================================================================
-Goal: Validate that RouteFlow solves a real, painful problem worth rebuilding.
+Goal: Validate that CMT Fleet Transit solves a real, painful problem worth rebuilding.
 
 Deliverables:
   - Problem statement (who hurts, what hurts, why now)
@@ -27,7 +27,7 @@ Exit criteria:
 ================================================================================
 PHASE 2 — MARKET RESEARCH & COMPETITOR ANALYSIS
 ================================================================================
-Goal: Understand the landscape and define RouteFlow's differentiation.
+Goal: Understand the landscape and define CMT Fleet Transit's differentiation.
 
 Deliverables:
   - Competitor matrix (features, pricing, tech, weaknesses)
@@ -37,7 +37,7 @@ Deliverables:
   - Pricing model sketch (B2B SaaS per org / per vehicle / per seat)
 
 Exit criteria:
-  - Positioning statement: "RouteFlow is the ___ for ___"
+  - Positioning statement: "CMT Fleet Transit is the ___ for ___"
   - Feature priority list informed by market gaps
 
 ================================================================================
@@ -164,7 +164,7 @@ Exit criteria:
 ================================================================================
 PHASE 9 — ROUTE OPTIMIZATION & MAPS INTEGRATION
 ================================================================================
-Goal: Deliver RouteFlow's core differentiator — smart routing.
+Goal: Deliver CMT Fleet Transit's core differentiator — smart routing.
 
 Deliverables:
   - packages/routing:

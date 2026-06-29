@@ -1,0 +1,48 @@
+# CMT Fleet Transit
+
+Multi-tenant B2B SaaS for fleet and route management — real-time GPS tracking, route optimization, passenger check-in/out, and automated notifications.
+
+Built for organizations that move people at scale: schools, corporate shuttles, tour operators, and transport services.
+
+## What CMT Fleet Transit Does
+
+CMT Fleet Transit gives transport operators a single control plane for daily fleet operations. Admins plan routes and assign trips; drivers execute runs with live GPS and verified check-ins; parents and guardians see where their passengers are without calling the office.
+
+| Capability | Outcome |
+|------------|---------|
+| Route planning & optimization | Fewer miles, predictable pickup order, capacity-aware stops |
+| Live tracking | Real-time vehicle position and ETA on dashboard and parent views |
+| Check-in / check-out | OTP + photo proof tied to GPS coordinates |
+| Notifications | Pickup, dropoff, delay, and emergency alerts via Telegram, LINE, and FCM |
+| Multi-tenant isolation | Each organization owns its data; roles enforce least privilege |
+
+## Who It Serves
+
+| Role | Primary need |
+|------|----------------|
+| SuperAdmin | Platform-wide oversight across organizations |
+| Admin | Org setup, fleet, routes, users, and reporting |
+| Staff | Day-of monitoring without full edit access |
+| Driver | Trip execution, GPS broadcast, passenger verification |
+| Parent / Guardian | Visibility into pickup, dropoff, and delays |
+
+## Discovery Documentation
+
+Product discovery artifacts live under [`docs/discovery/`](docs/discovery/). They capture the problem space, personas, pain points, success criteria, assumptions, and the go / no-go decision before build work begins.
+
+| Document | Description |
+|----------|-------------|
+| [Problem statement](docs/discovery/problem-statement.md) | Who hurts, what hurts, and why now |
+| [Personas](docs/discovery/personas.md) | Role definitions and goals |
+| [Pain points](docs/discovery/pain-points.md) | Operational gaps the product must close |
+| [Success criteria](docs/discovery/success-criteria.md) | What "done" looks like for v1 |
+| [Assumptions & risks](docs/discovery/assumptions-and-risks.md) | Hypotheses to validate early |
+| [One-pager](docs/discovery/one-pager.md) | Problem → solution → user → value prop |
+
+## Status
+
+Discovery in progress. Implementation follows after problem validation and research.
+
+## License
+
+MIT
