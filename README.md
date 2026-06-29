@@ -41,7 +41,7 @@ Product discovery artifacts live under [`docs/discovery/`](docs/discovery/). The
 
 ## Status
 
-Discovery in progress. Implementation follows after problem validation and research.
+Discovery complete — **go** decision recorded in [one-pager](docs/discovery/one-pager.md). Next: market research and competitor analysis.
 
 ## License
 
