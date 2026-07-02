@@ -39,9 +39,22 @@ Product discovery artifacts live under [`docs/discovery/`](docs/discovery/). The
 | [Assumptions & risks](docs/discovery/assumptions-and-risks.md) | Hypotheses to validate early |
 | [One-pager](docs/discovery/one-pager.md) | Problem → solution → user → value prop |
 
+## Market Research
+
+Competitive and positioning research lives under [`docs/research/`](docs/research/).
+
+| Document | Description |
+|----------|-------------|
+| [Market landscape](docs/research/market-landscape.md) | Segments and competitor categories |
+| [Competitor matrix](docs/research/competitor-matrix.md) | Features, pricing, tech, weaknesses |
+| [Differentiators](docs/research/differentiators.md) | Product and technical advantages |
+| [Regulatory compliance](docs/research/regulatory-compliance.md) | Privacy, child safety, photo proof |
+| [Pricing model](docs/research/pricing-model.md) | B2B SaaS pricing sketches |
+| [Positioning & priorities](docs/research/positioning-and-priorities.md) | Statement and feature priority list |
+
 ## Status
 
-Discovery complete — **go** decision recorded in [one-pager](docs/discovery/one-pager.md). Next: market research and competitor analysis.
+Discovery complete — **go** decision in [one-pager](docs/discovery/one-pager.md). Market research in progress.
 
 ## License
 
