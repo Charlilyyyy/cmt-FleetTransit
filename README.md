@@ -54,7 +54,7 @@ Competitive and positioning research lives under [`docs/research/`](docs/researc
 
 ## Status
 
-Discovery complete — **go** decision in [one-pager](docs/discovery/one-pager.md). Market research in progress.
+Discovery complete — **go** in [one-pager](docs/discovery/one-pager.md). Market research complete — positioning and priorities in [research](docs/research/positioning-and-priorities.md). Next: product requirements and MVP scope.
 
 ## License
 
