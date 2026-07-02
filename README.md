@@ -68,7 +68,7 @@ MVP scope and requirements live under [`docs/requirements/`](docs/requirements/)
 
 ## Status
 
-Discovery and market research complete. Product requirements in progress — see [requirements](docs/requirements/).
+Discovery, market research, and product requirements complete — MVP backlog and wireframes in [requirements](docs/requirements/mvp-backlog.md). Next: system architecture and tech stack.
 
 ## License
 
