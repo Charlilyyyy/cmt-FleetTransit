@@ -52,9 +52,23 @@ Competitive and positioning research lives under [`docs/research/`](docs/researc
 | [Pricing model](docs/research/pricing-model.md) | B2B SaaS pricing sketches |
 | [Positioning & priorities](docs/research/positioning-and-priorities.md) | Statement and feature priority list |
 
+## Product Requirements
+
+MVP scope and requirements live under [`docs/requirements/`](docs/requirements/).
+
+| Document | Description |
+|----------|-------------|
+| [PRD](docs/requirements/prd.md) | Product Requirements Document |
+| [User stories](docs/requirements/user-stories.md) | Stories per role |
+| [MVP features](docs/requirements/mvp-features.md) | In-scope v1 feature set |
+| [Out of scope](docs/requirements/out-of-scope.md) | Explicit v1 deferrals |
+| [Non-functional requirements](docs/requirements/non-functional-requirements.md) | Performance, security, uptime |
+| [MVP backlog](docs/requirements/mvp-backlog.md) | Epics and acceptance criteria |
+| [Wireframes](docs/requirements/wireframes.md) | Low-fi key flow sketches |
+
 ## Status
 
-Discovery complete — **go** in [one-pager](docs/discovery/one-pager.md). Market research complete — positioning and priorities in [research](docs/research/positioning-and-priorities.md). Next: product requirements and MVP scope.
+Discovery and market research complete. Product requirements in progress — see [requirements](docs/requirements/).
 
 ## License
 
