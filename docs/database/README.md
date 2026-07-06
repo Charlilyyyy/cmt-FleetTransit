@@ -75,9 +75,9 @@ Architecture is approved ([ADR-001](../architecture/adr/001-supabase-postgres-rl
 
 ## Exit Criteria
 
-- [ ] `supabase db push` applies cleanly
-- [ ] RLS: tenant A cannot read tenant B data
-- [ ] Schema documented in [DATABASE.md](DATABASE.md)
+- [x] `supabase db push` applies cleanly
+- [x] RLS: tenant A cannot read tenant B data (see tests T1–T8)
+- [x] Schema documented in [DATABASE.md](DATABASE.md)
 
 ## Related
 

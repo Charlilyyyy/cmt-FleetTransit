@@ -95,7 +95,7 @@ Data layer documentation lives under [`docs/database/`](docs/database/). SQL mig
 
 ## Status
 
-Architecture approved. Database design in progress — see [database](docs/database/).
+Database design complete — see [DATABASE.md](docs/database/DATABASE.md). Next: monorepo foundation and dev environment.
 
 ## License
 
