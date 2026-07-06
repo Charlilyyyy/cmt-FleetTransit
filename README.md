@@ -66,9 +66,22 @@ MVP scope and requirements live under [`docs/requirements/`](docs/requirements/)
 | [MVP backlog](docs/requirements/mvp-backlog.md) | Epics and acceptance criteria |
 | [Wireframes](docs/requirements/wireframes.md) | Low-fi key flow sketches |
 
+## Architecture
+
+System design documentation lives under [`docs/architecture/`](docs/architecture/).
+
+| Document | Description |
+|----------|-------------|
+| [System overview](docs/architecture/system-overview.md) | Architecture diagram and flows |
+| [Tech stack](docs/architecture/tech-stack.md) | Technology decisions by layer |
+| [Monorepo structure](docs/architecture/monorepo-structure.md) | Apps and packages layout |
+| [Integration map](docs/architecture/integration-map.md) | External service connections |
+| [ADRs](docs/architecture/adr/) | Architecture Decision Records |
+| [Approval](docs/architecture/approval.md) | Sign-off checklist |
+
 ## Status
 
-Discovery, market research, and product requirements complete — MVP backlog and wireframes in [requirements](docs/requirements/mvp-backlog.md). Next: system architecture and tech stack.
+Requirements complete. System architecture in progress — see [architecture](docs/architecture/).
 
 ## License
 
