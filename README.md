@@ -79,9 +79,23 @@ System design documentation lives under [`docs/architecture/`](docs/architecture
 | [ADRs](docs/architecture/adr/) | Architecture Decision Records |
 | [Approval](docs/architecture/approval.md) | Sign-off checklist |
 
+## Database Design
+
+Data layer documentation lives under [`docs/database/`](docs/database/). SQL migrations live in [`supabase/migrations/`](supabase/migrations/).
+
+| Document | Description |
+|----------|-------------|
+| [ERD](docs/database/erd.md) | Entity-relationship diagram |
+| [Schema](docs/database/schema.md) | Tables, columns, constraints |
+| [RLS policies](docs/database/rls-policies.md) | Row-Level Security per role |
+| [Indexes](docs/database/indexes.md) | Hot query indexes |
+| [Migrations](docs/database/migrations.md) | Migration strategy |
+| [Seed data](docs/database/seed-data.md) | Local development seeds |
+| [DATABASE.md](docs/database/DATABASE.md) | Consolidated schema reference |
+
 ## Status
 
-Discovery, requirements, and architecture complete — approved in [architecture approval](docs/architecture/approval.md). Next: database design and multi-tenant model.
+Architecture approved. Database design in progress — see [database](docs/database/).
 
 ## License
 
