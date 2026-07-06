@@ -81,7 +81,7 @@ System design documentation lives under [`docs/architecture/`](docs/architecture
 
 ## Status
 
-Requirements complete. System architecture in progress — see [architecture](docs/architecture/).
+Discovery, requirements, and architecture complete — approved in [architecture approval](docs/architecture/approval.md). Next: database design and multi-tenant model.
 
 ## License
 
