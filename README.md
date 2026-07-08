@@ -93,9 +93,19 @@ Data layer documentation lives under [`docs/database/`](docs/database/). SQL mig
 | [Seed data](docs/database/seed-data.md) | Local development seeds |
 | [DATABASE.md](docs/database/DATABASE.md) | Consolidated schema reference |
 
+## Monorepo Foundation
+
+Application workspace setup is tracked under [`docs/foundation/`](docs/foundation/). Source lives in `apps/` and `packages/` (see [monorepo structure](docs/architecture/monorepo-structure.md)).
+
+| Item | Description |
+|------|-------------|
+| [Foundation index](docs/foundation/README.md) | Bootstrap order and exit criteria |
+| [SETUP.md](docs/foundation/SETUP.md) | Local quick start (added with tooling) |
+| Root workspace | `package.json`, `pnpm-workspace.yaml` |
+
 ## Status
 
-Database design complete — see [DATABASE.md](docs/database/DATABASE.md). Next: monorepo foundation and dev environment.
+Monorepo foundation in progress — root workspace initialized. See [foundation](docs/foundation/).
 
 ## License
 

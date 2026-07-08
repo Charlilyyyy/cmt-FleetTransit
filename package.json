@@ -1,0 +1,25 @@
+{
+  "name": "cmt-fleet-transit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CMT Fleet Transit — multi-tenant passenger fleet operations",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "dev:driver": "pnpm --filter driver dev",
+    "build": "pnpm --filter web build",
+    "build:driver": "pnpm --filter driver build",
+    "lint": "pnpm -r lint",
+    "type-check": "pnpm -r type-check",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.15.0"
+  }
+}

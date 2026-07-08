@@ -1,0 +1,123 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+.next
+.turbo
+dist
+build
+out
+.output
+*.tsbuildinfo
+
+# Environment variables — never commit
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+*.env
+!.env.example
+
+# Deployment platforms
+.vercel
+.netlify
+.wrangler
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.idea
+.vscode
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Testing
+coverage
+.nyc_output
+*.lcov
+
+# Cache
+.cache
+.parcel-cache
+.eslintcache
+.stylelintcache
+
+# Supabase local state
+supabase/.branches
+supabase/.temp
+supabase/functions/.env
+
+# SQL dumps — allow migrations and seed source
+*.sql
+!supabase/migrations/*.sql
+!supabase/seed.sql
+
+# Mobile (Capacitor)
+.capacitor
+android/
+ios/
+*.apk
+*.ipa
+*.aab
+
+# Firebase — never commit service account keys
+**/serviceAccountKey*.json
+**/firebase-adminsdk*.json
+firebase-debug.log
+.firebase/
+
+# Google Cloud credentials
+gcloud-service-key.json
+google-credentials.json
+*.pem
+*.p12
+*.key
+*.crt
+*.cer
+
+# Secrets and credentials
+secrets/
+credentials/
+*.secret
+*.private
+.secrets
+.credentials
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# PWA generated (next-pwa)
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.js.map
+
+# Local development
+.local
+*.local.json
+
+# Backup files
+*.bak
+*.backup
