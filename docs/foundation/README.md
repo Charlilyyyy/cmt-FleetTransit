@@ -30,7 +30,7 @@ cmt-fleetTransit/
 ├── apps/
 │   └── web/                 # Next.js 14 primary app (scaffolded)
 ├── packages/
-│   ├── shared/              # Types, Zod, constants (next)
+│   ├── shared/              # Types, Zod, constants (scaffolded)
 │   └── storage/             # Supabase adapters (next)
 ├── scripts/                 # check-secrets, deploy helpers
 ├── supabase/                # Already present
@@ -44,6 +44,7 @@ cmt-fleetTransit/
 | App | Status | Notes |
 |-----|--------|-------|
 | `apps/web` | Scaffolded | Landing, `/api/health`, auth/dashboard placeholders |
+| `@cmt/shared` | Scaffolded | Types, Zod schemas, validation, errors — org-rooted model |
 ## Workspace Scripts (Root)
 
 | Script | Command |

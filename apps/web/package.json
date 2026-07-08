@@ -10,6 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@cmt/shared": "workspace:*",
     "clsx": "^2.1.0",
     "lucide-react": "^0.312.0",
     "next": "^14.1.0",
