@@ -102,12 +102,12 @@ Application workspace setup is tracked under [`docs/foundation/`](docs/foundatio
 | [Foundation index](docs/foundation/README.md) | Bootstrap order and exit criteria |
 | [Tooling](docs/foundation/tooling.md) | TypeScript, ESLint, Prettier |
 | [Env & secrets](docs/foundation/env-and-secrets.md) | `.env.example`, `pnpm check-secrets` |
-| [SETUP.md](docs/foundation/SETUP.md) | Local quick start (added next) |
+| [SETUP.md](docs/foundation/SETUP.md) | Local quick start |
 | Root workspace | `package.json`, `pnpm-workspace.yaml` |
 
 ## Status
 
-Monorepo foundation in progress — env template and secret checks added. See [foundation](docs/foundation/).
+Monorepo foundation complete — see [SETUP.md](docs/foundation/SETUP.md). Next: authentication, RBAC, and session management.
 
 ## License
 

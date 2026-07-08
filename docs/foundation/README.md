@@ -56,6 +56,7 @@ cmt-fleetTransit/
 | `pnpm lint` | Lint all packages |
 | `pnpm type-check` | TypeScript across workspace |
 | `pnpm format` | Prettier write |
+| `pnpm check-secrets` | Pre-push secret scan |
 
 **Package manager:** `pnpm@8.15+`  
 **Node:** `>=18` (`.nvmrc` pins 20)
@@ -64,7 +65,7 @@ cmt-fleetTransit/
 
 1. This README (workspace overview)
 2. [Monorepo structure](../architecture/monorepo-structure.md) — boundaries and dependency rules
-3. [SETUP.md](SETUP.md) — when added: install and run
+3. [SETUP.md](SETUP.md) — install and run
 4. [Tech stack](../architecture/tech-stack.md) — version targets
 
 ## Inputs
@@ -88,11 +89,12 @@ cmt-fleetTransit/
 
 ## Exit Criteria
 
-- [ ] `pnpm install` && `pnpm dev` runs web on localhost:3000
-- [ ] Type-check and lint pass on scaffold
-- [ ] [SETUP.md](SETUP.md) documents local quick start
+- [x] `pnpm install` && `pnpm dev` runs web on localhost:3000
+- [x] Type-check and lint pass on scaffold
+- [x] [SETUP.md](SETUP.md) documents local quick start
 
 ## Related
 
 - [Monorepo structure](../architecture/monorepo-structure.md)
 - [Database design](../database/README.md)
+- [SETUP.md](SETUP.md)
