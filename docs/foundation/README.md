@@ -19,6 +19,7 @@ Database design is complete ([DATABASE.md](../database/DATABASE.md)). This folde
 | File | Focus |
 |------|-------|
 | [tooling.md](tooling.md) | TypeScript, ESLint, Prettier conventions |
+| [env-and-secrets.md](env-and-secrets.md) | `.env.example`, `check-secrets` |
 | [SETUP.md](SETUP.md) | Local install, env, `pnpm dev` |
 
 Package and app source live under `apps/` and `packages/` (see [monorepo structure](../architecture/monorepo-structure.md)).
@@ -32,11 +33,11 @@ cmt-fleetTransit/
 ├── packages/
 │   ├── shared/              # Types, Zod, constants (scaffolded)
 │   └── storage/             # Supabase adapters (scaffolded)
-├── scripts/                 # check-secrets, deploy helpers
+├── scripts/                 # check-secrets.sh / .ps1
 ├── supabase/                # Already present
 ├── package.json
 ├── pnpm-workspace.yaml
-└── .env.example
+└── .env.example             # Present
 ```
 
 ## Apps

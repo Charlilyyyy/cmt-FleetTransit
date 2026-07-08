@@ -10,7 +10,8 @@
     "build:driver": "pnpm --filter driver build",
     "lint": "pnpm -r lint",
     "type-check": "pnpm -r type-check",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "check-secrets": "bash scripts/check-secrets.sh"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
