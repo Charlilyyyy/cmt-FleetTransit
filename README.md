@@ -106,7 +106,7 @@ Application workspace setup is tracked under [`docs/foundation/`](docs/foundatio
 
 ## Status
 
-Monorepo foundation in progress — workspace and shared tooling initialized. See [foundation](docs/foundation/).
+Monorepo foundation in progress — `apps/web` scaffolded. See [foundation](docs/foundation/).
 
 ## License
 

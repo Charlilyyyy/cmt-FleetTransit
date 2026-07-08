@@ -1,0 +1,19 @@
+{
+  "name": "CMT Fleet Transit",
+  "short_name": "CMT Fleet",
+  "description": "Multi-tenant fleet operations — routing, live GPS, check-in, and guardian alerts",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0284c7",
+  "orientation": "any",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

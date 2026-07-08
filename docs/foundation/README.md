@@ -28,10 +28,10 @@ Package and app source live under `apps/` and `packages/` (see [monorepo structu
 ```
 cmt-fleetTransit/
 ├── apps/
-│   └── web/                 # Next.js primary app
+│   └── web/                 # Next.js 14 primary app (scaffolded)
 ├── packages/
-│   ├── shared/              # Types, Zod, constants
-│   └── storage/             # Supabase adapters
+│   ├── shared/              # Types, Zod, constants (next)
+│   └── storage/             # Supabase adapters (next)
 ├── scripts/                 # check-secrets, deploy helpers
 ├── supabase/                # Already present
 ├── package.json
@@ -39,6 +39,11 @@ cmt-fleetTransit/
 └── .env.example
 ```
 
+## Apps
+
+| App | Status | Notes |
+|-----|--------|-------|
+| `apps/web` | Scaffolded | Landing, `/api/health`, auth/dashboard placeholders |
 ## Workspace Scripts (Root)
 
 | Script | Command |
