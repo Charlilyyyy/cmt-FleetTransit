@@ -100,12 +100,13 @@ Application workspace setup is tracked under [`docs/foundation/`](docs/foundatio
 | Item | Description |
 |------|-------------|
 | [Foundation index](docs/foundation/README.md) | Bootstrap order and exit criteria |
-| [SETUP.md](docs/foundation/SETUP.md) | Local quick start (added with tooling) |
+| [Tooling](docs/foundation/tooling.md) | TypeScript, ESLint, Prettier |
+| [SETUP.md](docs/foundation/SETUP.md) | Local quick start (added later) |
 | Root workspace | `package.json`, `pnpm-workspace.yaml` |
 
 ## Status
 
-Monorepo foundation in progress — root workspace initialized. See [foundation](docs/foundation/).
+Monorepo foundation in progress — workspace and shared tooling initialized. See [foundation](docs/foundation/).
 
 ## License
 

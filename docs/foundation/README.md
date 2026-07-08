@@ -18,9 +18,10 @@ Database design is complete ([DATABASE.md](../database/DATABASE.md)). This folde
 
 | File | Focus |
 |------|-------|
+| [tooling.md](tooling.md) | TypeScript, ESLint, Prettier conventions |
 | [SETUP.md](SETUP.md) | Local install, env, `pnpm dev` |
 
-Additional foundation notes and checklists land here as tooling is added. Package and app source live under `apps/` and `packages/` (see [monorepo structure](../architecture/monorepo-structure.md)).
+Package and app source live under `apps/` and `packages/` (see [monorepo structure](../architecture/monorepo-structure.md)).
 
 ## Target Layout
 
