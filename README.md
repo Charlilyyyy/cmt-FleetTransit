@@ -140,9 +140,17 @@ Operations admin UI under [`docs/dashboard/`](docs/dashboard/).
 |------|-------------|
 | [DASHBOARD.md](docs/dashboard/DASHBOARD.md) | Layout, pages, real-time monitoring, states |
 
+## Field Operations
+
+Driver app, tracking, and parent portal under [`docs/field/`](docs/field/).
+
+| Item | Description |
+|------|-------------|
+| [FIELD.md](docs/field/FIELD.md) | Driver flow, offline queue, tracking, parent portal, PWA |
+
 ## Status
 
-Operations dashboard complete — see [DASHBOARD.md](docs/dashboard/DASHBOARD.md). Next: driver app, real-time tracking, and parent portal.
+Driver app, tracking, and parent portal complete — see [FIELD.md](docs/field/FIELD.md). Next: notifications, testing, and security hardening.
 
 ## License
 
