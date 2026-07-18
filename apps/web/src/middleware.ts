@@ -3,7 +3,17 @@ import { NextResponse, type NextRequest } from 'next/server';
 const SESSION_COOKIE_NAME = 'cmt_session';
 
 const PROTECTED_PREFIXES = ['/dashboard', '/parent', '/driver'];
-const PROTECTED_API_PREFIXES = ['/api/organizations', '/api/fleet', '/api/routes', '/api/trips'];
+const PROTECTED_API_PREFIXES = [
+  '/api/organizations',
+  '/api/schools',
+  '/api/vehicles',
+  '/api/drivers',
+  '/api/passengers',
+  '/api/users',
+  '/api/routes',
+  '/api/trips',
+  '/api/audit',
+];
 
 /**
  * Edge middleware performs a cheap presence check on the session cookie.
@@ -36,8 +46,13 @@ export const config = {
     '/parent/:path*',
     '/driver/:path*',
     '/api/organizations/:path*',
-    '/api/fleet/:path*',
+    '/api/schools/:path*',
+    '/api/vehicles/:path*',
+    '/api/drivers/:path*',
+    '/api/passengers/:path*',
+    '/api/users/:path*',
     '/api/routes/:path*',
     '/api/trips/:path*',
+    '/api/audit/:path*',
   ],
 };
