@@ -10,6 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@cmt/auth": "workspace:*",
     "@cmt/shared": "workspace:*",
     "@cmt/storage": "workspace:*",
     "clsx": "^2.1.0",
