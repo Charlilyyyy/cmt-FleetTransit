@@ -157,10 +157,63 @@ Notifications, testing, and hardening under [`docs/security/`](docs/security/).
 | [SECURITY_CHECKLIST.md](docs/security/SECURITY_CHECKLIST.md) | Release security gates |
 | [DEEP_SECURITY_AUDIT.md](docs/security/DEEP_SECURITY_AUDIT.md) | STRIDE threat model |
 
+## Deployment
+
+Shipping and operations under [`docs/deployment/`](docs/deployment/).
+
+| Item | Description |
+|------|-------------|
+| [DEPLOYMENT_FREE_TIER.md](docs/deployment/DEPLOYMENT_FREE_TIER.md) | $0/month Vercel + Supabase + Firebase stack |
+| [SETUP_INSTRUCTIONS.md](docs/deployment/SETUP_INSTRUCTIONS.md) | New-developer onboarding (< 30 min) |
+| [RUNBOOK.md](docs/deployment/RUNBOOK.md) | Incidents, backup/restore, rollback, monitoring |
+
+## Quick Start
+
+```bash
+corepack enable && corepack prepare pnpm@8.15.0 --activate
+pnpm install
+cp .env.example apps/web/.env.local   # fill Firebase / Supabase / Maps keys
+supabase start && supabase db reset   # migrations + two-tenant seed
+pnpm dev                              # http://localhost:3000
+```
+
+Quality gates: `pnpm type-check` · `pnpm lint` · `pnpm test` · `pnpm check-secrets`.
+
+## Architecture at a Glance
+
+```
+apps/web ── Next.js 14 (dashboard · driver · parent · API routes)
+   │
+   ├─ @cmt/auth          Firebase + RBAC + LINE
+   ├─ @cmt/storage       Supabase client + adapter
+   ├─ @cmt/routing       Clarke-Wright + 2-opt optimizer
+   ├─ @cmt/notifications Telegram · LINE · FCM
+   └─ @cmt/shared        types · Zod · utils
+        │
+        ▼
+   Supabase (Postgres + RLS + Realtime + Storage)
+```
+
+## Roadmap
+
+| Stage | Status |
+|-------|--------|
+| Discovery, research, requirements, architecture | Complete |
+| Database & multi-tenant model | Complete |
+| Monorepo foundation | Complete |
+| Auth, RBAC & sessions | Complete |
+| Core domain APIs | Complete |
+| Route optimization & maps | Complete |
+| Operations dashboard | Complete |
+| Driver app, tracking & parent portal | Complete |
+| Notifications, testing & security | Complete |
+| Deployment, monitoring & documentation | Complete |
+| Post-v1: native apps, AI demand prediction, white-label, i18n | Planned |
+
 ## Status
 
-Notifications, testing, and security hardening complete — see [docs/security/](docs/security/). Next: deployment, monitoring, and documentation.
+**v1 complete.** All stages from discovery through deployment are implemented and documented. The stack is portfolio-ready and deployable to free tiers — see [DEPLOYMENT_FREE_TIER.md](docs/deployment/DEPLOYMENT_FREE_TIER.md).
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE). Contributions welcome: [CONTRIBUTING.md](CONTRIBUTING.md).
