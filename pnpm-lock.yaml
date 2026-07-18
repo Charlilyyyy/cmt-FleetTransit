@@ -35,6 +35,9 @@ importers:
       '@cmt/auth':
         specifier: workspace:*
         version: link:../../packages/auth
+      '@cmt/routing':
+        specifier: workspace:*
+        version: link:../../packages/routing
       '@cmt/shared':
         specifier: workspace:*
         version: link:../../packages/shared
