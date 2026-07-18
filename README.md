@@ -148,9 +148,18 @@ Driver app, tracking, and parent portal under [`docs/field/`](docs/field/).
 |------|-------------|
 | [FIELD.md](docs/field/FIELD.md) | Driver flow, offline queue, tracking, parent portal, PWA |
 
+## Security & Quality
+
+Notifications, testing, and hardening under [`docs/security/`](docs/security/).
+
+| Item | Description |
+|------|-------------|
+| [SECURITY_CHECKLIST.md](docs/security/SECURITY_CHECKLIST.md) | Release security gates |
+| [DEEP_SECURITY_AUDIT.md](docs/security/DEEP_SECURITY_AUDIT.md) | STRIDE threat model |
+
 ## Status
 
-Driver app, tracking, and parent portal complete — see [FIELD.md](docs/field/FIELD.md). Next: notifications, testing, and security hardening.
+Notifications, testing, and security hardening complete — see [docs/security/](docs/security/). Next: deployment, monitoring, and documentation.
 
 ## License
 
