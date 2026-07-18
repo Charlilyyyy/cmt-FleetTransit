@@ -13,6 +13,7 @@ const PROTECTED_API_PREFIXES = [
   '/api/routes',
   '/api/trips',
   '/api/audit',
+  '/api/parent',
 ];
 
 /**
@@ -54,5 +55,6 @@ export const config = {
     '/api/routes/:path*',
     '/api/trips/:path*',
     '/api/audit/:path*',
+    '/api/parent/:path*',
   ],
 };

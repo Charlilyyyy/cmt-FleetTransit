@@ -113,6 +113,7 @@ export interface StorageAdapter {
 
   checkIns: {
     list(tripId: string): Promise<CheckIn[]>;
+    listByPassenger(passengerId: string, limit?: number): Promise<CheckIn[]>;
     create(data: Omit<CheckIn, 'id' | 'createdAt' | 'recordedAt'> & Partial<Pick<CheckIn, 'recordedAt'>>): Promise<CheckIn>;
   };
 

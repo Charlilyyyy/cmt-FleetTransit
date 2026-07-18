@@ -611,6 +611,17 @@ export class SupabaseAdapter implements StorageAdapter {
       return (data ?? []).map(mapCheckIn);
     },
 
+    listByPassenger: async (passengerId: string, limit = 50): Promise<CheckIn[]> => {
+      const { data, error } = await this.client
+        .from('check_ins')
+        .select('*')
+        .eq('passenger_id', passengerId)
+        .order('recorded_at', { ascending: false })
+        .limit(limit);
+      throwOnError(error);
+      return (data ?? []).map(mapCheckIn);
+    },
+
     create: async (input): Promise<CheckIn> => {
       const { data, error } = await this.client
         .from('check_ins')
