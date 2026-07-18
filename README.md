@@ -124,9 +124,17 @@ Fleet operations CRUD and workflows under [`docs/api/`](docs/api/).
 | [API.md](docs/api/API.md) | Endpoint contracts, RBAC, trip lifecycle |
 | Route handlers | `apps/web/src/app/api/*` |
 
+## Routing
+
+Optimization and maps under [`docs/routing/`](docs/routing/) and [`packages/routing`](packages/routing).
+
+| Item | Description |
+|------|-------------|
+| [ROUTING.md](docs/routing/ROUTING.md) | Clarke-Wright + 2-opt, distance matrix, optimize API |
+
 ## Status
 
-Core domain APIs complete — see [API.md](docs/api/API.md). Next: route optimization and maps integration.
+Route optimization and maps complete — see [ROUTING.md](docs/routing/ROUTING.md). Next: operations dashboard web admin UI.
 
 ## License
 
