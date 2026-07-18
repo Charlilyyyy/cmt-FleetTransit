@@ -105,9 +105,19 @@ Application workspace setup is tracked under [`docs/foundation/`](docs/foundatio
 | [SETUP.md](docs/foundation/SETUP.md) | Local quick start |
 | Root workspace | `package.json`, `pnpm-workspace.yaml` |
 
+## Authentication
+
+Identity, sessions, and RBAC live under [`docs/auth/`](docs/auth/) and [`packages/auth`](packages/auth).
+
+| Item | Description |
+|------|-------------|
+| [AUTH.md](docs/auth/AUTH.md) | Providers, claims, login flow, middleware, RBAC |
+| Auth package | Firebase client/admin, LINE, role matrix |
+| API routes | `/api/auth/{verify,session,line}` |
+
 ## Status
 
-Monorepo foundation complete — see [SETUP.md](docs/foundation/SETUP.md). Next: authentication, RBAC, and session management.
+Authentication and RBAC complete — see [AUTH.md](docs/auth/AUTH.md). Next: core domain APIs and business logic.
 
 ## License
 
