@@ -10,6 +10,7 @@
     "build:driver": "pnpm --filter driver build",
     "lint": "pnpm -r lint",
     "type-check": "pnpm -r type-check",
+    "test": "pnpm -r --if-present test",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "check-secrets": "bash scripts/check-secrets.sh"
   },
