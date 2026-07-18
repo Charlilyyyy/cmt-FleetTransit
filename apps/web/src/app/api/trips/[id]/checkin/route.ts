@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 
 import { writeAudit } from '@/lib/audit';
+import { notifyGuardians } from '@/lib/notify';
 import { ApiError, getServerStorage, handleApiError, parseBody, requirePermission } from '@/lib/api';
 
 const checkInSchema = z.object({
@@ -76,6 +77,13 @@ export async function POST(request: Request, { params }: Params) {
       entityId: checkIn.id,
       organizationId: trip.organizationId,
       metadata: { passengerId: body.passengerId, tripId: trip.id },
+    });
+
+    await notifyGuardians(storage, {
+      event: body.type,
+      passenger,
+      tripId: trip.id,
+      checkInId: checkIn.id,
     });
 
     return NextResponse.json({ data: checkIn }, { status: 201 });

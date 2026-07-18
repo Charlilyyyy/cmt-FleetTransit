@@ -35,6 +35,9 @@ importers:
       '@cmt/auth':
         specifier: workspace:*
         version: link:../../packages/auth
+      '@cmt/notifications':
+        specifier: workspace:*
+        version: link:../../packages/notifications
       '@cmt/routing':
         specifier: workspace:*
         version: link:../../packages/routing
