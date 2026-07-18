@@ -21,6 +21,7 @@ export const NAV_ITEMS: NavItem[] = [
   { href: '/dashboard/users', label: 'Users', roles: ADMINS },
   { href: '/dashboard/reports', label: 'Reports', roles: ALL_STAFF },
   { href: '/dashboard/audit', label: 'Audit', roles: ADMINS },
+  { href: '/dashboard/settings', label: 'Settings', roles: ALL_STAFF },
 ];
 
 export function visibleNav(role: UserRole | undefined): NavItem[] {

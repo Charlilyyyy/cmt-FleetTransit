@@ -132,9 +132,17 @@ Optimization and maps under [`docs/routing/`](docs/routing/) and [`packages/rout
 |------|-------------|
 | [ROUTING.md](docs/routing/ROUTING.md) | Clarke-Wright + 2-opt, distance matrix, optimize API |
 
+## Dashboard
+
+Operations admin UI under [`docs/dashboard/`](docs/dashboard/).
+
+| Item | Description |
+|------|-------------|
+| [DASHBOARD.md](docs/dashboard/DASHBOARD.md) | Layout, pages, real-time monitoring, states |
+
 ## Status
 
-Route optimization and maps complete — see [ROUTING.md](docs/routing/ROUTING.md). Next: operations dashboard web admin UI.
+Operations dashboard complete — see [DASHBOARD.md](docs/dashboard/DASHBOARD.md). Next: driver app, real-time tracking, and parent portal.
 
 ## License
 
