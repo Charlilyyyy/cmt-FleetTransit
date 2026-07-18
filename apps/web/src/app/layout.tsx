@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { DM_Sans, Outfit } from 'next/font/google';
 
+import { AuthProvider } from '@/hooks/useAuth';
 import './globals.css';
 
 const dmSans = DM_Sans({
@@ -39,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${dmSans.variable} ${outfit.variable} font-sans`}>
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
