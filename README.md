@@ -115,9 +115,18 @@ Identity, sessions, and RBAC live under [`docs/auth/`](docs/auth/) and [`package
 | Auth package | Firebase client/admin, LINE, role matrix |
 | API routes | `/api/auth/{verify,session,line}` |
 
+## Core APIs
+
+Fleet operations CRUD and workflows under [`docs/api/`](docs/api/).
+
+| Item | Description |
+|------|-------------|
+| [API.md](docs/api/API.md) | Endpoint contracts, RBAC, trip lifecycle |
+| Route handlers | `apps/web/src/app/api/*` |
+
 ## Status
 
-Authentication and RBAC complete — see [AUTH.md](docs/auth/AUTH.md). Next: core domain APIs and business logic.
+Core domain APIs complete — see [API.md](docs/api/API.md). Next: route optimization and maps integration.
 
 ## License
 
